@@ -24,8 +24,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         LV_suggestion = findViewById(R.id.LV_Suggestion);
         Button BT = findViewById(R.id.BTbutton);
-        dongspinner= findViewById(R.id.dongspinner);
-        hospinner= findViewById(R.id.hospinner);
+        Button RQ = findViewById(R.id.requestbutton);
 
         BT.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,6 +39,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent login = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(login);
+            }
+        });
+        RQ.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent request = new Intent(MainActivity.this, Request.class);
+                startActivity(request);
             }
         });
 
