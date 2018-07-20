@@ -3,6 +3,8 @@ package com.example.sunrinton.interpeople;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -17,6 +19,7 @@ public class RequestActivity extends AppCompatActivity {
     ArrayList<RequestData> items = new ArrayList<>();
     TextView dong, ho, reason;
     String str1[], str2[], str3[];
+    int i;
 
 
     @Override
@@ -36,6 +39,7 @@ public class RequestActivity extends AppCompatActivity {
         for (String item : str1) {
             items.add(new RequestData(item));
         }
+        i = 1;
 
         dong.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +49,7 @@ public class RequestActivity extends AppCompatActivity {
                     items.add(new RequestData(item));
                 }
                 mAdapter.notifyDataSetChanged();
+                i = 1;
             }
         });
         ho.setOnClickListener(new View.OnClickListener() {
@@ -55,7 +60,7 @@ public class RequestActivity extends AppCompatActivity {
                     items.add(new RequestData(item));
                 }
                 mAdapter.notifyDataSetChanged();
-
+                i = 2;
             }
         });
         reason.setOnClickListener(new View.OnClickListener() {
@@ -66,9 +71,37 @@ public class RequestActivity extends AppCompatActivity {
                     items.add(new RequestData(item));
                 }
                 mAdapter.notifyDataSetChanged();
-
+                i = 3;
             }
         });
+        LV_RQ.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String str1 = items.get(position).getContent();
+                switch (i) {
+                    case 1:
+                        dong.setText(str1);
+                        break;
+                    case 2:
+                        ho.setText(str1);
+                        break;
+
+                    case 3:
+                        reason.setText(str1);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
+        Button start = findViewById(R.id.BT_Request);
+        start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
 
     }
 }

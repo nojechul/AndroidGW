@@ -13,6 +13,8 @@ public class RequestAdapater extends BaseAdapter {
     private ArrayList<RequestData> items = new ArrayList<>();
     private Context mcontext;
 
+
+
     public RequestAdapater(ArrayList<RequestData> items, Context mcontext) {
         this.items = items;
         this.mcontext = mcontext;
@@ -25,20 +27,19 @@ public class RequestAdapater extends BaseAdapter {
 
     @Override
     public Object getItem(int position) {
-        return position;
+        return items.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        View v = LayoutInflater.from(mcontext).inflate(R.layout.item_request_type,null);
+    public View getView(final int position, final View convertView, ViewGroup parent) {
+        View v = LayoutInflater.from(mcontext).inflate(R.layout.item_request_type, null);
 
         TextView TV = v.findViewById(R.id.request_item_content);
-
         TV.setText(items.get(position).getContent());
 
         return v;
