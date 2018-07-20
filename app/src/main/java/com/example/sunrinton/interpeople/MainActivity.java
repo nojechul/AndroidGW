@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         BT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Bluetooth.class);
+                Intent intent = new Intent(MainActivity.this, BluetoothActivity.class);
                 startActivity(intent);
             }
         });
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         RQ.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent request = new Intent(MainActivity.this, Request.class);
+                Intent request = new Intent(MainActivity.this, RequestActivity.class);
                 startActivity(request);
             }
         });

@@ -10,6 +10,7 @@
         android:textColor="#475FF7"
         android:textSize="26sp"
         android:textAlignment="center"
+        android:id="@+id/request_item_content"
         android:fontFamily="@font/nanumbarungothiclight"
         />
 
