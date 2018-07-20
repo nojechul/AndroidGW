@@ -102,6 +102,7 @@
                 android:layout_marginLeft="20sp"
                 android:fontFamily="@font/nanumbarungothic"
                 android:text="소음 유형 선택"
+                android:id="@+id/list_title"
                 android:textColor="#516AF5"
                 android:textSize="20sp" />
 

@@ -20,6 +20,7 @@ public class RequestActivity extends AppCompatActivity {
     TextView dong, ho, reason;
     String str1[], str2[], str3[];
     int i;
+    TextView listtitle;
 
 
     @Override
@@ -31,6 +32,7 @@ public class RequestActivity extends AppCompatActivity {
         LV_RQ.setAdapter(mAdapter);
         dong = findViewById(R.id.dongTV);
         ho = findViewById(R.id.hoTV);
+        listtitle = findViewById(R.id.list_title);
         reason = findViewById(R.id.reason);
         str1 = new String[]{"101동", "102동", "103동", "104동", "105동", "106동", "107동", "108동"};
         str2 = new String[]{"101호", "102호", "103호", "201호", "202호", "203호", "303호", "401호", "402호", "403호"};
@@ -50,6 +52,7 @@ public class RequestActivity extends AppCompatActivity {
                 }
                 mAdapter.notifyDataSetChanged();
                 i = 1;
+                listtitle.setText("동 선택");
             }
         });
         ho.setOnClickListener(new View.OnClickListener() {
@@ -61,6 +64,8 @@ public class RequestActivity extends AppCompatActivity {
                 }
                 mAdapter.notifyDataSetChanged();
                 i = 2;
+                listtitle.setText("호 선택");
+
             }
         });
         reason.setOnClickListener(new View.OnClickListener() {
@@ -72,6 +77,7 @@ public class RequestActivity extends AppCompatActivity {
                 }
                 mAdapter.notifyDataSetChanged();
                 i = 3;
+                listtitle.setText("소음 유형 선택");
             }
         });
         LV_RQ.setOnItemClickListener(new AdapterView.OnItemClickListener() {
