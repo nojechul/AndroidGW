@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="너무 시끄럽네요 신고하겠습니다."
+        android:textSize="20sp"
+        android:id="@+id/TV_suggest"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"/>
+
+</LinearLayout>
