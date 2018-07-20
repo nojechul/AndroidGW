@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Request"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".Request">
 
     <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -27,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:background="@drawable/menuwhite"
-                android:backgroundTint="#4e66ed"/>
+                android:backgroundTint="#4e66ed" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -43,10 +42,66 @@
 
     </android.support.v7.widget.Toolbar>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="#516AF5"></LinearLayout>
+        android:background="#516AF5">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="35sp"
+            android:fontFamily="@font/nanumbarungothicbold"
+            android:gravity="center"
+            android:text="101동"
+            android:textColor="#fff"
+            android:textSize="25sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/nanumbarungothicbold"
+            android:gravity="center"
+            android:text="101호"
+            android:textColor="#fff"
+            android:textSize="25sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="35sp"
+            android:fontFamily="@font/nanumbarungothicbold"
+            android:gravity="center"
+            android:text="동물소리"
+            android:textColor="#fff"
+            android:textSize="25sp" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:id="@+id/TV_request_type"/>
+
+        <ListView
+            android:id="@+id/LV_"
+            android:layout_below="@+id/TV_request_type"
+            android:layout_centerHorizontal="true"
+            android:layout_width="100sp"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/item_request_type"
+            android:scrollbars="none"
+            />
+
+
+    </RelativeLayout>
 
 
 </LinearLayout>
